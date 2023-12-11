@@ -9,7 +9,7 @@ jobs:
         id: step-check
         run: >
           echo "::set-output name=CHECK::$(
-            echo "yes"
+            (exit 0) && echo "yes" || echo "no"
           )"
 
       - name: "Check Passed"
