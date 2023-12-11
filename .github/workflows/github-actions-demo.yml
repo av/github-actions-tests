@@ -8,7 +8,9 @@ jobs:
       - name: "Step Check"
         id: step-check
         run: >
-          echo "::set-output name=CHECK::yes"
+          echo "::set-output name=CHECK::$(
+            echo "yes"
+          )"
 
       - name: "Check Passed"
         if: steps.step-check.outputs.CHECK == 'yes'
