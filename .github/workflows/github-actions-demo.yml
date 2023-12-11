@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: "Debug info"
         id: debug-info
-        run: >
+        run: |
           which aws
           aws --version
 
