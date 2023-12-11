@@ -5,11 +5,17 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: "Debug info"
+        id: debug-info
+        run: >
+          which aws
+          aws --version
+
       - name: "Step Check"
         id: step-check
         run: >
           echo "::set-output name=CHECK::$(
-            (exit 0) && echo "yes" || echo "no"
+            (exit 0) 2>/dev/null && echo "yes" || echo "no"
           )"
 
       - name: "Check Passed"
